@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الأيلتس الذكية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen pb-12">
+
+    <!-- Header -->
+    <header class="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-md bg-opacity-80">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2.5 rounded-xl text-white shadow-lg shadow-blue-500/20">
+                    <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide">لوحة تحكم الأيلتس الذكية</h1>
+                    <p class="text-xs text-gray-400">خطة الـ 6 أسابيع الشاملة لإصابة الهدف</p>
+                </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full md:w-64 bg-gray-800 p-3 rounded-xl border border-gray-700/50">
+                <div class="flex justify-between text-xs mb-1 font-semibold">
+                    <span class="text-gray-400">نسبة الإنجاز الإجمالية</span>
+                    <span id="progress-text" class="text-blue-400">0%</span>
+                </div>
+                <div class="w-full bg-gray-900 h-2 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-gradient-to-r from-blue-500 to-indigo-500 h-full w-0 transition-all duration-500 ease-out"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Right Column: Resources Hub -->
+        <div class="lg:col-span-1 space-y-6">
+            <div class="bg-gray-900 border border-gray-800 rounded-2xl p-5 sticky top-24">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2 text-blue-400">
+                    <i class="fa-solid fa-folder-open"></i> مركز المصادر المنظمة
+                </h2>
+                <p class="text-xs text-gray-400 mb-4 leading-relaxed">اضغط على اسم المنصة للانتقال للشرح فوراً:</p>
+                
+                <div class="space-y-4">
+                    <!-- Listening & Reading -->
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800">
+                        <span class="text-xs font-bold text-emerald-400 block mb-2"><i class="fa-solid fa-ear-listen ml-1"></i> الاستماع والقراءة</span>
+                        <div class="flex flex-col gap-1.5 text-sm">
+                            <a href="https://youtube.com/@asadyaqubofficial" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> Asad Yaqub (التكتيكات)</a>
+                            <a href="https://youtube.com/@ieltsliz" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> IELTS Liz (التركيز الأساسي)</a>
+                        </div>
+                    </div>
+
+                    <!-- Writing -->
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800">
+                        <span class="text-xs font-bold text-amber-400 block mb-2"><i class="fa-solid fa-pen-nib ml-1"></i> قسم الكتابة (Writing)</span>
+                        <div class="flex flex-col gap-1.5 text-sm">
+                            <a href="https://youtube.com/@ieltsadvantage" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> IELTS Advantage (الأفضل)</a>
+                            <a href="https://youtube.com/@e2ielts" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> E2 IELTS (البثوث وحل الأسئلة)</a>
+                        </div>
+                    </div>
+
+                    <!-- Speaking -->
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800">
+                        <span class="text-xs font-bold text-purple-400 block mb-2"><i class="fa-solid fa-comments ml-1"></i> قسم المحادثة (Speaking)</span>
+                        <div class="flex flex-col gap-1.5 text-sm">
+                            <a href="https://youtube.com/@englishspeakingsuccess" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> English Speaking Success</a>
+                            <a href="https://youtube.com/@aehelp" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-youtube text-red-500"></i> AcademicEnglishHelp (المحاكاة)</a>
+                        </div>
+                    </div>
+
+                    <!-- Testing & Shortcuts -->
+                    <div class="p-3 bg-gray-950 rounded-xl border border-gray-800">
+                        <span class="text-xs font-bold text-blue-400 block mb-2"><i class="fa-solid fa-laptop-code ml-1"></i> الاختبارات والمراجعة الشاملة</span>
+                        <div class="flex flex-col gap-1.5 text-sm">
+                            <a href="https://takeielts.britishcouncil.org/take-ielts/prepare/ielts-ready" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-globe text-blue-400"></i> IELTS Ready (المجلس البريطاني)</a>
+                            <a href="https://ieltsliz.com" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-solid fa-globe text-blue-400"></i> موقع IELTS Liz الشامل</a>
+                            <a href="https://t.me/IELTSosamah" target="_blank" class="hover:text-blue-400 transition flex items-center gap-2"><i class="fa-brands fa-telegram text-sky-400"></i> دليلك للايلتس (أسامة)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Column: The 6-Week Timeline -->
+        <div class="lg:col-span-2 space-y-6">
+            <h2 class="text-lg font-bold flex items-center gap-2 text-gray-200">
+                <i class="fa-solid fa-calendar-days text-blue-500"></i> جدول خطة الأسابيع التفاعلي
+            </h2>
+
+            <!-- Weeks Accordion Container -->
+            <div id="weeks-container" class="space-y-4">
+                <!-- Data will be injected here via JavaScript for easy scaling -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // الخطة والمهام مقسمة بالتفصيل ومربوطة بالمصادر المطلوبة
+        const planData = [
+            {
+                week: 1,
+                title: "الأسبوع الأول: التأسيس وتكنيكات الاستماع",
+                tasks: [
+                    "مشاهدة الفيديوهات التعريفية بهيكل اختبار الآيلتس العام على موقع IELTS Liz وقناة التليجرام.",
+                    "دراسة أنواع أسئلة الاستماع (الفراغات، الخرائط، الاختيار من متعدد) عبر قناة Asad Yaqub.",
+                    "متابعة استراتيجيات الاستماع وتجنب الفخاخ على قناة IELTS Liz الرئيسي.",
+                    "تطبيق عملي: حل قسم استماع كامل يومياً عبر منصة IELTS Ready وتقييم الأخطاء."
+                ]
+            },
+            {
+                week: 2,
+                title: "الأسبوع الثاني: إتقان استراتيجيات القراءة (Reading)",
+                tasks: [
+                    "فهم وتطبيق تكنيكات القراءة السريعة Skimming & Scanning مع فيديوهات Asad Yaqub.",
+                    "التدرب المكثف على أصعب أسئلة القراءة (True / False / Not Given) وحل مشكلة الوقت.",
+                    "قراءة مقالات ونصوص متنوعة من موقع IELTS Liz لزيادة مخزون الكلمات والمصطلحات الأكاديمية.",
+                    "تطبيق عملي: حل قطعة قراءة كاملة يومياً بمؤقت زمني (20 دقيقة للقطعة) على منصة IELTS Ready."
+                ]
+            },
+            {
+                week: 3,
+                title: "الأسبوع الثالث: تفكيك الكتابة - المهمة الأولى (Task 1)",
+                tasks: [
+                    "دراسة كيفية تحليل الرسوم البيانية والجداول وكتابة النظرة العامة (Overview) مع IELTS Advantage.",
+                    "حفظ الكلمات والمصطلحات المخصصة لوصف التغيرات والنسب من قناة دليلك للأيلتس تليجرام.",
+                    "حضور بث مباشر أو تطبيق عملي على قناة E2 IELTS لرؤية كتابة الـ Task 1 خطوة بخطوة.",
+                    "تطبيق عملي: كتابة تقريرين ومقارنتهما بالنماذج الحاصلة على بند مرتفع في موقع IELTS Liz."
+                ]
+            },
+            {
+                week: 4,
+                title: "الأسبوع الرابع: إتقان الكتابة - المهمة الثانية (Task 2)",
+                tasks: [
+                    "تعلم الهيكل الثابت للمقال الأكاديمي (مقدمة، فقرتين جسم، خاتمة) من فيديوهات IELTS Advantage الأساسية.",
+                    "التدرب على العصف الذهني وتوليد الأفكار ودعمها بالأمثلة بطريقة مقنعة ومباشرة.",
+                    "مراجعة أدوات الربط (Linking words) وتجنب الأخطاء القواعدية الشائعة مع E2 IELTS.",
+                    "تطبيق عملي: كتابة 3 مقالات كاملة (250 كلمة) خلال 40 دقيقة لكل مقال."
+                ]
+            },
+            {
+                week: 5,
+                title: "الأسبوع الخامس: الانطلاق في المحادثة (Speaking)",
+                tasks: [
+                    "دراسة تكتيكات الأجزاء الثلاثة للاختبار وطريقة توسيع الإجابات مع قناة English Speaking Success.",
+                    "مشاهدة اختبارات محاكاة حقيقية على AcademicEnglishHelp لفهم معايير التقييم وتجنب التوتر.",
+                    "تجميع الأسئلة الشائعة من موقع IELTS Liz وممارسة الإجابة عليها بصوت مرتفع.",
+                    "تطبيق عملي: تسجيل صوتك أثناء الإجابة، الاستماع للتسجيل وتصحيح الطلاقة والنطق ذاتياً."
+                ]
+            },
+            {
+                week: 6,
+                title: "الأسبوع السادس: المحاكاة الكاملة تحت ضغط الوقت",
+                tasks: [
+                    "خوض اختبار تجريبي كامل (استماع، قراءة، كتابة) متواصل بدون انقطاع على منصة IELTS Ready لتعويد العقل.",
+                    "تحليل الأخطاء في القراءة والاستماع وحفظ الكلمات المفتاحية (Synonyms) التي سببت الخطأ في دفترك.",
+                    "مراجعة التنبيهات السريعة والاستراتيجيات الأخيرة المنشورة في قناة تليجرام دليلك للايلتس.",
+                    "التركيز على النوم الجيد وتهدئة التوتر تماماً قبل موعد الاختبار الحقيقي بيومين."
+                ]
+            }
+        ];
+
+        // رندر الأسابيع والمهام في الصفحة
+        const container = document.getElementById('weeks-container');
+        
+        planData.forEach(w => {
+            const weekDiv = document.createElement('div');
+            weekDiv classList = "bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden shadow-md";
+            
+            let tasksHtml = '';
+            w.tasks.forEach((task, index) => {
+                const taskId = `w${w.week}t${index}`;
+                tasksHtml += `
+                    <label class="flex items-start gap-3 p-3.5 bg-gray-950/40 rounded-xl border border-gray-800/60 hover:bg-gray-800/20 transition cursor-pointer select-none">
+                        <input type="checkbox" id="${taskId}" onchange="updateProgress()" class="w-5 h-5 rounded border-gray-700 bg-gray-900 text-blue-600 focus:ring-blue-500/30 focus:ring-offset-gray-900 mt-0.5 accent-blue-500">
+                        <span class="text-sm leading-relaxed text-gray-300 peer-checked:text-gray-500 task-text">${task}</span>
+                    </label>
+                `;
+            });
+
+            weekDiv.innerHTML = `
+                <div class="p-4 bg-gray-900/80 border-b border-gray-800 flex items-center justify-between">
+                    <h3 class="font-bold text-gray-100 flex items-center gap-2">
+                        <span class="bg-blue-600/10 text-blue-400 text-xs px-2.5 py-1 rounded-md border border-blue-500/20">الأسبوع ${w.week}</span>
+                        ${w.title.split(': ')[1]}
+                    </h3>
+                </div>
+                <div class="p-4 space-y-3">
+                    ${tasksHtml}
+                </div>
+            `;
+            container.appendChild(weekDiv);
+        });
+
+        // دالة تحديث شريط التقدم وحفظ البيانات في المتصفح
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const totalCount = checkboxes.length;
+            
+            const percentage = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+            
+            // تحديث العناصر في الواجهة
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-text').innerText = `${percentage}%`;
+            
+            // حفظ الحالات في LocalStorage
+            const state = {};
+            checkboxes.forEach(cb => {
+                state[cb.id] = cb.checked;
+                // تغيير ستايل النص إذا كانت المهمة مكتملة
+                const textSpan = cb.nextElementSibling;
+                if(cb.checked) {
+                    textSpan.classList.add('line-through', 'text-gray-500');
+                    textSpan.classList.remove('text-gray-300');
+                } else {
+                    textSpan.classList.remove('line-through', 'text-gray-500');
+                    textSpan.classList.add('text-gray-300');
+                }
+            });
+            localStorage.setItem('ielts_progress_state', JSON.stringify(state));
+        }
+
+        // دالة استعادة البيانات عند فتح الموقع مجدداً
+        function loadSavedState() {
+            const savedState = localStorage.getItem('ielts_progress_state');
+            if (savedState) {
+                const state = JSON.parse(savedState);
+                Object.keys(state).forEach(id => {
+                    const cb = document.getElementById(id);
+                    if (cb) {
+                        cb.checked = state[id];
+                    }
+                });
+            }
+            updateProgress();
+        }
+
+        // تشغيل الاستعادة عند تحميل الصفحة لأول مرة
+        window.onload = loadSavedState;
+    </script>
+</body>
+</html>
